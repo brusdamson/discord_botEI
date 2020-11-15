@@ -250,4 +250,4 @@ start()
 menu()
 
 
-client.run('Nzc3MTc0ODQ4NTE4MjI1OTQz.X6_mew.L-RHdQEKREDriZslRa9OEDgjn4g')
+client.run('TOKEN')
