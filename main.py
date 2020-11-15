@@ -148,7 +148,16 @@ def calc():
 					await message.channel.send("Отправьте номер выбранного пункта: ")
 					menu()
 
-
+def aut():
+	@client.event
+	async def on_message(message):
+		if message.author == client.user:
+			return
+		msg = message.content.lower()
+		if str(msg) == "author":
+			await message.channel.send("Автор бота: Иван Егоров")
+			await message.channel.send("Вк: https://vk.com/id504317967 ")
+			await message.channel.send("Исходники бота: https://github.com/brusdamson/discord_botEI ")
 
 def menu():
 	@client.event
@@ -173,6 +182,7 @@ def menu():
 			calc()
 		elif msg == "3":
 			await message.channel.send("Отправьте 'author' для информации об авторе ")
+			aut()
 		else:
 			await message.channel.send("Такого номера нет!")
 			await message.channel.send("Меню: ")
