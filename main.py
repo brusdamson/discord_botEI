@@ -158,6 +158,27 @@ def aut():
 			await message.channel.send("Автор бота: Иван Егоров")
 			await message.channel.send("Вк: https://vk.com/id504317967 ")
 			await message.channel.send("Исходники бота: https://github.com/brusdamson/discord_botEI ")
+			await message.channel.send("Отправьте 0 для выхода в главное меню: ")
+			@client.event
+			async def on_message(message):
+				if message.author == client.user:
+					return
+				msg = message.content
+				if msg == "0":
+					await message.channel.send("Меню: ")
+					await message.channel.send("1. Погода ")
+					await message.channel.send("2. Калькулятор ")
+					await message.channel.send("3. Об авторе ")
+					await message.channel.send("Отправьте номер выбранного пункта: ")
+					menu()
+				else:
+					await message.channel.send("Такого номера нет! Выход в главное меню!")
+					await message.channel.send("Меню: ")
+					await message.channel.send("1. Погода ")
+					await message.channel.send("2. Калькулятор ")
+					await message.channel.send("3. Об авторе ")
+					await message.channel.send("Отправьте номер выбранного пункта: ")
+					menu()
 
 def menu():
 	@client.event
